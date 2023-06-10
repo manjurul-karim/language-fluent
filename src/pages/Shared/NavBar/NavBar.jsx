@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import useDarkMode from "../../../hooks/useDarkMode";
 import logo from "../../../assets/logo/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogeOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -37,16 +46,8 @@ const NavBar = () => {
           DashBoard
         </Link>{" "}
       </li> */}
-      {/* <li>
-        {" "}
-        <Link to="/">
-          <button className="btn gap-2">
-            <BsCart3></BsCart3>
-            <div className="badge badge-secondary">+{cart?.length || 0}</div>
-          </button>
-        </Link>{" "}
-      </li> */}
-      {/* <li>
+
+      <li>
         {user ? (
           <>
             {" "}
@@ -63,10 +64,10 @@ const NavBar = () => {
                   />
                 </span>
               </div>
+              <button onClick={handleLogeOut} className="btn btn-ghost">
+                LogOut
+              </button>
             </div>
-            <button onClick={handleLogOut} className="btn btn-ghost">
-              LogOut
-            </button>
           </>
         ) : (
           <>
@@ -74,7 +75,7 @@ const NavBar = () => {
             <Link to="login">Login</Link>{" "}
           </>
         )}
-      </li> */}
+      </li>
     </>
   );
 
@@ -115,7 +116,9 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+          <ul className="menu items-center menu-horizontal px-1">
+            {navOptions}
+          </ul>
         </div>
         <div className="navbar-end">
           <button onClick={toggleDarkMode}>

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 const eye = <FaEye></FaEye>;
 const eyeslash = <FaEyeSlash></FaEyeSlash>;
 
@@ -12,10 +14,30 @@ const RegisterForm = () => {
     getValues,
     formState: { errors },
   } = useForm();
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     console.log(data);
+    createUser(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(data.name, data.photoURL)
+        .then(() => {
+          console.log("user profile info updated");
+          reset();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "User created successfully.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate("/");
+        })
+        .catch((error) => console.log(error));
+    });
   };
+
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -150,7 +172,6 @@ const RegisterForm = () => {
               {...register("gender")}
               className="select select-bordered text-black"
             >
-              
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Others">Other</option>

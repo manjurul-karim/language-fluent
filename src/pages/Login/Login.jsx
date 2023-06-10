@@ -1,11 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import login from "../../assets/login/38435-register.json";
 import Lottie from "lottie-react";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 const eye = <FaEye></FaEye>;
 const eyeslash = <FaEyeSlash></FaEyeSlash>;
 
@@ -17,9 +20,23 @@ const Login = () => {
     getValues,
     formState: { errors },
   } = useForm();
+  const { signIn } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     console.log(data);
+    signIn(data.email, data.password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      Swal.fire({
+        title: "User Login Successful.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+    });
   };
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
@@ -111,12 +128,7 @@ const Login = () => {
               </div>
             </form>
             <div className="divider w-3/4 mx-auto">OR</div>
-            <div className="mt-2 flex justify-center">
-              <button className="flex btn btn-outline btn-info">
-                <FaGoogle></FaGoogle> Google Sign In
-              </button>
-            </div>
-
+            <SocialLogin></SocialLogin>
             <div className="my-4 ml-12">
               <h2 className="text-sm font-semibold">
                 Don't have an account?{" "}

@@ -7,8 +7,9 @@ import Lottie from "lottie-react";
 import registeranim from "../../assets/register/112454-form-registration.json";
 import RegisterForm from "./RegisterForm";
 import registerbg from "../../assets/register/registerbg.jpg";
-import gh from '../../assets/banner/banner.png'
-import './Register.css'
+import gh from "../../assets/banner/banner.png";
+import "./Register.css";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
   //   const {
@@ -44,11 +45,7 @@ const Register = () => {
               </div>
               <RegisterForm></RegisterForm>
               <div className="divider w-3/4 mx-auto">OR</div>
-              <div className="flex justify-center">
-                <button className="flex btn btn-outline btn-info ">
-                  <FaGoogle></FaGoogle> Google Sign Up
-                </button>
-              </div>
+              <SocialLogin></SocialLogin>
               <div className="my-4 text-center">
                 <h2 className="text-md font-md hover:bg-black hover:w-44 hover:mx-auto hover:rounded-md">
                   Already A Member?{" "}
