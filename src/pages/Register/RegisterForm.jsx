@@ -146,13 +146,14 @@ const RegisterForm = () => {
             <label className="label">
               <span className="">Your Gender</span>
             </label>
-            <select className="select select-bordered text-black">
-              <option disabled value>
-                Pick one
-              </option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
+            <select
+              {...register("gender")}
+              className="select select-bordered text-black"
+            >
+              
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Other</option>
             </select>
           </div>
           <div className="form-control">
@@ -179,7 +180,8 @@ const RegisterForm = () => {
             </label>
             <input
               type="text"
-              placeholder="Type here"
+              {...register("phone")}
+              placeholder="Phone Number"
               className="input input-bordered w-full max-w-xs text-black"
             />
           </div>
@@ -189,7 +191,8 @@ const RegisterForm = () => {
             </label>
             <input
               type="text"
-              placeholder="Type here"
+              {...register("address")}
+              placeholder="Address"
               className="input input-bordered w-full max-w-xs text-black"
             />
           </div>

@@ -27,13 +27,13 @@ const Register = () => {
       <Helmet>
         <title>Language Fluent | Register</title>
       </Helmet>
-      <div className="bgpicture">
+      <div className="bgpicture ">
         <div className="dark hero min-h-screen font-[cinzel] ">
           <div className="hero-content flex-col md:flex-row ">
             {/* <div className="w-full md:w-2/5  lg:text-left">
             <Lottie animationData={registeranim} loop={true} />
           </div> */}
-            <div className="card  w-full  shadow-2xl bg-base-100 bg-opacity-5 text-white">
+            <div className="card  w-full  shadow-2xl border-2 bg-base-100 bg-opacity-5 text-white">
               <div className="text-center ">
                 <h2 className="font-semibold text-4xl mb-2">
                   Create An Account
@@ -50,7 +50,7 @@ const Register = () => {
                 </button>
               </div>
               <div className="my-4 text-center">
-                <h2 className="text-md font-md">
+                <h2 className="text-md font-md hover:bg-black hover:w-44 hover:mx-auto hover:rounded-md">
                   Already A Member?{" "}
                   <span className="text-lg font-bold text-blue-700">
                     <Link to="/login">Login</Link>{" "}
