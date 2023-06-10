@@ -6,6 +6,7 @@ import Classes from "../pages/Classes/Classes";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "loader",
+        element: <LoadingSpinner></LoadingSpinner>,
       },
     ],
   },
