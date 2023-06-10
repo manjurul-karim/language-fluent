@@ -23,6 +23,14 @@ const NavBar = () => {
         {" "}
         <Link to="classes">Classes</Link>{" "}
       </li>
+      <li>
+        {" "}
+        <Link to="login">Login</Link>{" "}
+      </li>
+      <li>
+        {" "}
+        <Link to="register">Register</Link>{" "}
+      </li>
       {/* <li>
         {" "}
         <Link to={isAdmin ? "dashboard/adminhome" : "dashboard/userhome"}>
@@ -71,8 +79,8 @@ const NavBar = () => {
   );
 
   return (
-    <nav className="navbar bg-slate-500 opacity-80 font-[cinzel]">
-      <div className="navbar  max-w-screen-xl text-white px-4">
+    <>
+      <div className="navbar font-[cinzel] z-10 bg-opacity-90 bg-[#173857] max-w-screen-xl text-white px-4">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -131,7 +139,7 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ const Footer = () => {
   }, []);
   return (
     <>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-10 bg-[#173857] text-white ">
         <div>
           <img className="w-16" src={logo} alt="" />
           <p>
@@ -41,7 +41,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+      <footer className="footer footer-center p-4 bg-[#173857] text-white ">
         <div>
           <p>
             Copyright &copy; {currentYear} Language Fluent
