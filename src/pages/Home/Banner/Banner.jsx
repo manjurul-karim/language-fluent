@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import banner from '../../../assets/banner/main.svg'
 
 const Banner = () => {
@@ -14,7 +15,7 @@ const Banner = () => {
               language-learning lessons,games and activities.Join us and have
               some fun.
             </p>
-            <button className="btn btn-primary">Start Learning Now!</button>
+            <Link to='/classes'><button className="btn btn-primary">Start Learning Now!</button></Link>
           </div>
         </div>
       </div>

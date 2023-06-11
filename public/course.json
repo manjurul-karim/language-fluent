@@ -1,41 +1,41 @@
 [
   {
-    "image": "https://example.com/course1.jpg",
+    "image": "https://i.ibb.co/pXDNtZh/spanish.webp",
     "name": "Spanish 101",
     "instructor_name": "Maria Sanchez",
     "available_seat": 10,
     "price": 49.99
   },
   {
-    "image": "https://example.com/course2.jpg",
+    "image": "https://i.ibb.co/9VBtdvG/french.webp",
     "name": "French for Beginners",
     "instructor_name": "Pierre Dubois",
     "available_seat": 5,
     "price": 39.99
   },
   {
-    "image": "https://example.com/course3.jpg",
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
     "name": "German Grammar Masterclass",
     "instructor_name": "Hans Müller",
     "available_seat": 8,
     "price": 59.99
   },
   {
-    "image": "https://example.com/course4.jpg",
+    "image": "https://i.ibb.co/xXtFNJX/italian.png",
     "name": "Italian Conversation Practice",
     "instructor_name": "Giulia Rossi",
     "available_seat": 15,
     "price": 44.99
   },
   {
-    "image": "https://example.com/course5.jpg",
+    "image": "https://i.ibb.co/j8Jp1pt/chinese.jpg",
     "name": "Chinese Mandarin for Business",
     "instructor_name": "Li Wei",
     "available_seat": 3,
     "price": 69.99
   },
   {
-    "image": "https://example.com/course6.jpg",
+    "image": "https://i.ibb.co/vvxJRq5/japanese.png",
     "name": "Japanese Writing Workshop",
     "instructor_name": "Yuki Tanaka",
     "available_seat": 12,
@@ -49,42 +49,42 @@
     "price": 49.99
   },
   {
-    "image": "https://example.com/course8.jpg",
+    "image": "https://i.ibb.co/tqLV2kX/arabic.webp",
     "name": "Arabic Calligraphy Basics",
     "instructor_name": "Ahmed Khalil",
     "available_seat": 10,
     "price": 59.99
   },
   {
-    "image": "https://example.com/course9.jpg",
+    "image": "https://i.ibb.co/W2N7LyB/portuguese.jpg",
     "name": "Portuguese for Travelers",
     "instructor_name": "Ana Silva",
     "available_seat": 6,
     "price": 34.99
   },
   {
-    "image": "https://example.com/course10.jpg",
+    "image": "https://i.ibb.co/7YxMVn3/korean.jpg",
     "name": "Korean Vocabulary Builder",
     "instructor_name": "Ji-hye Park",
     "available_seat": 9,
     "price": 49.99
   },
   {
-    "image": "https://example.com/bangla_course.jpg",
+    "image": "https://i.ibb.co/fr5VYTK/Bangla-ds.jpg",
     "name": "Bangla Language Masterclass",
     "instructor_name": "Rahim Ahmed",
     "available_seat": 8,
     "price": 49.99
   },
   {
-    "image": "https://example.com/course12.jpg",
+    "image": "https://i.ibb.co/XLM2cFZ/Hindi.webp",
     "name": "Hindi Grammar Essentials",
     "instructor_name": "Priya Patel",
     "available_seat": 5,
     "price": 44.99
   },
   {
-    "image": "https://example.com/course13.jpg",
+    "image": "https://i.ibb.co/f8r4k4t/english.jpg",
     "name": "English Pronunciation Mastery",
     "instructor_name": "John Thompson",
     "available_seat": 15,
