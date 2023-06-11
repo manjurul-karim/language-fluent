@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../pages/Shared/NavBar/NavBar";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../pages/Shared/Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -46,7 +46,7 @@ const DashBoard = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <NavLink to='/dashboard/selectedcourse'>select Course</NavLink>
           </li>
         </ul>
       </div>

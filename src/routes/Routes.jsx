@@ -9,6 +9,7 @@ import Register from "../pages/Register/Register";
 import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
 import DashBoard from "../Layout/DashBoard";
 import PrivetRoute from "./PrivetRoute";
+import SelectedCourse from "../pages/Dashboard/StudentDashboard/SelectedCourse/SelectedCourse";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ export const router = createBrowserRouter([
         <DashBoard></DashBoard>
       </PrivetRoute>
     ),
-    children: [],
+    children: [
+      {
+        path: 'selectedcourse',
+        element: <SelectedCourse></SelectedCourse>
+      }
+    ],
   },
 ]);
