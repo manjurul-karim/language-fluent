@@ -7,6 +7,8 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
+import DashBoard from "../Layout/DashBoard";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -23,15 +25,15 @@ export const router = createBrowserRouter([
         element: <Instructor></Instructor>,
       },
       {
-        path: "classes",
+        path: "/classes",
         element: <Classes></Classes>,
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login></Login>,
       },
       {
-        path: "register",
+        path: "/register",
         element: <Register></Register>,
       },
       {
@@ -39,5 +41,14 @@ export const router = createBrowserRouter([
         element: <LoadingSpinner></LoadingSpinner>,
       },
     ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivetRoute>
+        <DashBoard></DashBoard>
+      </PrivetRoute>
+    ),
+    children: [],
   },
 ]);

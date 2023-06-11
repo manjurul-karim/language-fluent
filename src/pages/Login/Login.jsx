@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/login/38435-register.json";
 import Lottie from "lottie-react";
 import { useForm } from "react-hook-form";
@@ -13,6 +13,10 @@ const eye = <FaEye></FaEye>;
 const eyeslash = <FaEyeSlash></FaEyeSlash>;
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     reset,
@@ -24,19 +28,25 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    signIn(data.email, data.password).then((result) => {
-      const user = result.user;
-      console.log(user);
-      Swal.fire({
-        title: "User Login Successful.",
-        showClass: {
-          popup: "animate__animated animate__fadeInDown",
-        },
-        hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
-        },
+    signIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: "User Login Successful.",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        navigate(from, { replace: true });
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
       });
-    });
   };
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {

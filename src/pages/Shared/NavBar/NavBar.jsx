@@ -32,14 +32,14 @@ const NavBar = () => {
         {" "}
         <Link to="classes">Classes</Link>{" "}
       </li>
-      <li>
-        {" "}
-        <Link to="login">Login</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to="register">Register</Link>{" "}
-      </li>
+      {user ? (
+        <li>
+          <Link to="dashboard">Dashboard</Link>
+        </li>
+      ) : (
+        ""
+      )}
+      
       {/* <li>
         {" "}
         <Link to={isAdmin ? "dashboard/adminhome" : "dashboard/userhome"}>
@@ -64,7 +64,7 @@ const NavBar = () => {
                   />
                 </span>
               </div>
-              <button onClick={handleLogeOut} className="btn btn-ghost">
+              <button onClick={handleLogeOut} className="btn btn-xs btn-outline btn-info capitalize">
                 LogOut
               </button>
             </div>

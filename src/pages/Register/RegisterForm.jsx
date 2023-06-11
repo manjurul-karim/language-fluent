@@ -3,10 +3,16 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 const eye = <FaEye></FaEye>;
 const eyeslash = <FaEyeSlash></FaEyeSlash>;
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     reset,
@@ -26,7 +32,7 @@ const RegisterForm = () => {
           console.log("user profile info updated");
           reset();
           Swal.fire({
-            position: "top-end",
+            position: "center",
             icon: "success",
             title: "User created successfully.",
             showConfirmButton: false,
