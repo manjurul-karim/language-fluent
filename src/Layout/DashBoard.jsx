@@ -46,7 +46,7 @@ const DashBoard = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink to='/dashboard/selectedcourse'>select Course</NavLink>
+            <NavLink to='/dashboard/selectedcourse'>Select Course</NavLink>
           </li>
         </ul>
       </div>

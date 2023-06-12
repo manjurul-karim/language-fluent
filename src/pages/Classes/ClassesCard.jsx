@@ -16,6 +16,7 @@ const ClassesCard = ({ course }) => {
         courseId: _id,
         name,
         price,
+        available_seat,
         email: user.email,
         userName: user.displayName,
       };
