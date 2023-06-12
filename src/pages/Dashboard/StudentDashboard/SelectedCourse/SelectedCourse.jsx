@@ -1,9 +1,10 @@
 import React from "react";
 import useSelectCourse from "../../../../hooks/useSelectCourse";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const SelectedCourse = () => {
-  const [selectCoure, refetch] = useSelectCourse();
+  const [selectCourse, refetch] = useSelectCourse();
   const handleDelete = (course) => {
     Swal.fire({
       title: "Are you sure?",
@@ -21,7 +22,7 @@ const SelectedCourse = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              refetch()
+              refetch();
               Swal.fire("Deleted!", "Your course has been deleted.", "success");
             }
           });
@@ -45,7 +46,7 @@ const SelectedCourse = () => {
             </tr>
           </thead>
           <tbody>
-            {selectCoure.map((course, index) => (
+            {selectCourse.map((course, index) => (
               <tr key={course._id}>
                 <th>
                   <label>{index + 1}</label>
@@ -55,9 +56,12 @@ const SelectedCourse = () => {
                 <td>{course.price}</td>
                 <td>{course.available_seat}</td>
                 <td>
-                  <button className="btn btn-info btn-outline btn-xs">
-                    pay
-                  </button>
+                  <Link to="/dashboard/payment">
+                    {" "}
+                    <button className="btn btn-info btn-outline btn-xs">
+                      pay
+                    </button>
+                  </Link>
                 </td>
                 <td>
                   <button

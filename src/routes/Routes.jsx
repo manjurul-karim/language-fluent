@@ -10,6 +10,9 @@ import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
 import DashBoard from "../Layout/DashBoard";
 import PrivetRoute from "./PrivetRoute";
 import SelectedCourse from "../pages/Dashboard/StudentDashboard/SelectedCourse/SelectedCourse";
+import Payment from "../pages/Dashboard/StudentDashboard/Payment/Payment";
+
+import AllUser from "../pages/Dashboard/AdminDashboard/AllUser/AllUser";
 
 export const router = createBrowserRouter([
   {
@@ -52,9 +55,17 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: 'selectedcourse',
-        element: <SelectedCourse></SelectedCourse>
-      }
+        path: "selectedcourse",
+        element: <SelectedCourse></SelectedCourse>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+      {
+        path: "alluser",
+        element: <AllUser></AllUser>,
+      },
     ],
   },
 ]);

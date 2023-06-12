@@ -4,7 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const useSelectCourse = () => {
   const { user } = useContext(AuthContext);
-  const { refetch, data: selectCoure = [] } = useQuery({
+  const { refetch, data: selectCourse=[]  } = useQuery({
     queryKey: ["selectCourse", user?.email],
     queryFn: async () => {
       const res = await fetch(
@@ -14,7 +14,7 @@ const useSelectCourse = () => {
     },
   });
 
-  return [selectCoure, refetch];
+  return [selectCourse, refetch];
 };
 
 export default useSelectCourse;

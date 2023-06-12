@@ -15,5 +15,6 @@ module.exports = {
     "no-undef": "off",
     "react/no-unknown-property": "off",
     "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "off",
   },
 };

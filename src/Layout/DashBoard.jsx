@@ -1,12 +1,14 @@
 import React from "react";
-import NavBar from "../pages/Shared/NavBar/NavBar";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import Footer from "../pages/Shared/Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const DashBoard = () => {
   const { user } = useContext(AuthContext);
+  // const { role } = user;
+
+  const isAdmin = true;
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -42,12 +44,80 @@ const DashBoard = () => {
             </div>
           </div>
 
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <NavLink to='/dashboard/selectedcourse'>Select Course</NavLink>
-          </li>
+          {isAdmin ? (
+            <>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/alluser">All User</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment">Payment</NavLink>
+              </li>
+            </>
+          )}
+
+          {/* { isAdmin ? (
+            <>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/alluser">All User</Link>
+              </li>
+            <> ): (<>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment">Payment</NavLink>
+              </li>
+              </>
+          )} */}
+          {/* {!isAdmin && (
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment">Payment</NavLink>
+              </li>
+            </ul>
+          )} */}
+          {/* {!isAdmin ||
+            !isInstructor(
+              <>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/selectedcourse">
+                      Select Course
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/payment">Payment</NavLink>
+                  </li>
+                </ul>
+              </>
+            )} */}
         </ul>
       </div>
     </div>
