@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "totalClasses": 10,
+    "classNames": ["Spanish 101", "French for Beginners"]
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "totalClasses": 8,
+    "classNames": ["Italian for Travelers"]
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "David Johnson",
+    "email": "david.johnson@example.com",
+    "totalClasses": 12,
+    "classNames": ["German 101", "Advanced English"]
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Emily Wilson",
+    "email": "emily.wilson@example.com",
+    "totalClasses": 5,
+    "classNames": ["Chinese Mandarin 101"]
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Michael Brown",
+    "email": "michael.brown@example.com",
+    "totalClasses": 15,
+    "classNames": ["Japanese for Beginners", "Korean 101"]
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Sarah Thompson",
+    "email": "sarah.thompson@example.com",
+    "totalClasses": 7,
+    "classNames": ["Russian for Travelers"]
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Daniel Lee",
+    "email": "daniel.lee@example.com",
+    "totalClasses": 9,
+    "classNames": ["Portuguese 101"]
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Olivia Garcia",
+    "email": "olivia.garcia@example.com",
+    "totalClasses": 11,
+    "classNames": ["Arabic for Beginners", "Intermediate French"]
+  },
+  {
+    "id": 9,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Matthew Martinez",
+    "email": "matthew.martinez@example.com",
+    "totalClasses": 6,
+    "classNames": ["German for Travelers"]
+  },
+  {
+    "id": 10,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Sophia Anderson",
+    "email": "sophia.anderson@example.com",
+    "totalClasses": 14,
+    "classNames": ["Spanish Conversation", "Italian 101"]
+  },
+  {
+    "id": 11,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "James Taylor",
+    "email": "james.taylor@example.com",
+    "totalClasses": 3,
+    "classNames": ["French Conversation"]
+  },
+  {
+    "id": 12,
+    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "name": "Ava Rodriguez",
+    "email": "ava.rodriguez@example.com",
+    "totalClasses": 10,
+    "classNames": ["English Grammar"]
+  }
+]

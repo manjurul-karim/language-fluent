@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InstructorDashboard = () => {
+const AddClass = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const InstructorDashboard = () => {
     );
 };
 
-export default InstructorDashboard;
+export default AddClass;

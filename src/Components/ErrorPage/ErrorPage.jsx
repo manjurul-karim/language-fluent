@@ -5,7 +5,7 @@ import error404 from "../../assets/error/error404.gif";
 
 const ErrorPage = () => {
   return (
-    <div className="container flex flex-col items-center justify-center">
+    <div className="container bg-white flex flex-col items-center justify-center">
       <div className="">
         <img className="rounded-lg  mt-4" src={error404} alt="" loading="lazy" />
         <div className="flex justify-center mt-5">
