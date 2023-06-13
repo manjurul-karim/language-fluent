@@ -1,15 +1,12 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import useAuth from "../hooks/useAuth";
+
 
 const DashBoard = () => {
-  const { user } = useContext(AuthContext);
-  // const { role } = user;
-
-  // const isAdmin =
+  const { user } = useAuth();
 
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
@@ -18,11 +15,8 @@ const DashBoard = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
-        {/* <NavBar></NavBar> */}
-        <div className="min-h-[calc(100vh-136px)] max-w-screen-xl mx-auto ">
-          <Outlet></Outlet>
-        </div>
-        {/* <Footer></Footer> */}
+        <Outlet></Outlet>
+
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden"
@@ -49,29 +43,6 @@ const DashBoard = () => {
             </div>
           </div>
 
-          {/* {isAdmin ? (
-            <>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/alluser">All User</Link>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/payment">Payment</NavLink>
-              </li>
-            </>
-          )} */}
-
           {isAdmin && (
             <ul>
               <li>
@@ -88,27 +59,31 @@ const DashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <NavLink to="/dashboard/payment">Payment</NavLink>
+                <NavLink to="/dashboard/payment">Add a Class</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment">My Class Class</NavLink>
               </li>
             </ul>
           )}
 
-          {!isAdmin &&
-            !isInstructor &&(
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/selectedcourse">
-                    Select Course
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/payment">Payment</NavLink>
-                </li>
-              </ul>
-            )}
+          {!isAdmin && !isInstructor && (
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <NavLink to="/dashboard/selectedcourse">
+                  My Select Course
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/selectedcourse">
+                  My Enroll Course
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </ul>
       </div>
     </div>

@@ -39,14 +39,6 @@ const NavBar = () => {
       ) : (
         ""
       )}
-      
-      {/* <li>
-        {" "}
-        <Link to={isAdmin ? "dashboard/adminhome" : "dashboard/userhome"}>
-          DashBoard
-        </Link>{" "}
-      </li> */}
-
       <li>
         {user ? (
           <>
@@ -64,7 +56,10 @@ const NavBar = () => {
                   />
                 </span>
               </div>
-              <button onClick={handleLogeOut} className="btn btn-xs btn-outline btn-info capitalize">
+              <button
+                onClick={handleLogeOut}
+                className="btn btn-xs btn-outline btn-info capitalize"
+              >
                 LogOut
               </button>
             </div>
