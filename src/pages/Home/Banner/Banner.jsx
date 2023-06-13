@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="">
-      <div className="hero min-h-screen bg-[url('assets/banner/banner.png')]">
+      <div className="hero  min-h-screen bg-[url('assets/banner/banner.png')]">
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-white">
           <div className="max-w-md font-[cinzel]">
