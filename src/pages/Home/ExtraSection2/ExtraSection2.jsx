@@ -6,7 +6,7 @@ import fourth from "../../..//assets/section/fourth.png";
 
 const ExtraSection2 = () => {
   return (
-    <div className="my-36">
+    <div className="mt-24">
       <h2 className="my-24 text-xl font-bold text-center">
         Train your long term memory with a method that’s <br /> faster and
         better than traditional rote learning.
