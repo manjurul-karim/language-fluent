@@ -9,7 +9,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
 const Payment = () => {
 const [selectCourse] = useSelectCourse();
-
+const price = selectCourse[0]
   return (
     <div>
       <h2 className="text-2xl text-green-800 font-semibold mb-12">
@@ -17,7 +17,7 @@ const [selectCourse] = useSelectCourse();
       </h2>
       <div className="border-2 border-cyan-500 w-[600px] mx-auto p-12 rounded-md">
         <Elements stripe={stripePromise}>
-          <CheckoutForm  />
+          <CheckoutForm price={price}  />
           {/* Pass the first element of the price array */}
         </Elements>
       </div>

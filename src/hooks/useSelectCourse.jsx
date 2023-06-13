@@ -5,18 +5,15 @@ import useAuth from "./useAuth";
 
 const useSelectCourse = () => {
   const { user } = useAuth();
-  const token = localStorage.getItem("access-token");
+  // const token = localStorage.getItem("access-token");
 
   const [axiosSecure] = useAxiosSecure();
   const { refetch, data: selectCourse = [] } = useQuery({
     queryKey: ["selectCourse", user?.email],
     queryFn: async () => {
-      const res = await axios(`/selectcourse?email=${user?.email}`, {
-        headers: {
-          authorization: `bearer${token}`,
-        },
-      });
-      return res.json();
+      const res = await axiosSecure(`/selectcourse?email=${user?.email}`);
+      console.log("res from axios", res);
+      return res.data;
     },
   });
 

@@ -2,12 +2,17 @@ import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const DashBoard = () => {
   const { user } = useContext(AuthContext);
   // const { role } = user;
 
-  const isAdmin = true;
+  // const isAdmin =
+
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div className="drawer lg:drawer-open">
@@ -44,7 +49,7 @@ const DashBoard = () => {
             </div>
           </div>
 
-          {isAdmin ? (
+          {/* {isAdmin ? (
             <>
               <li>
                 <Link to="/">Home</Link>
@@ -65,59 +70,45 @@ const DashBoard = () => {
                 <NavLink to="/dashboard/payment">Payment</NavLink>
               </li>
             </>
-          )}
+          )} */}
 
-          {/* { isAdmin ? (
-            <>
+          {isAdmin && (
+            <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/dashboard/alluser">All User</Link>
               </li>
-            <> ): (<>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/payment">Payment</NavLink>
-              </li>
-              </>
-          )} */}
-          {/* {!isAdmin && (
+            </ul>
+          )}
+          {isInstructor && (
             <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <NavLink to="/dashboard/selectedcourse">Select Course</NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/payment">Payment</NavLink>
               </li>
             </ul>
-          )} */}
-          {/* {!isAdmin ||
-            !isInstructor(
-              <>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/selectedcourse">
-                      Select Course
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/payment">Payment</NavLink>
-                  </li>
-                </ul>
-              </>
-            )} */}
+          )}
+
+          {!isAdmin &&
+            !isInstructor &&(
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/selectedcourse">
+                    Select Course
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/payment">Payment</NavLink>
+                </li>
+              </ul>
+            )}
         </ul>
       </div>
     </div>
