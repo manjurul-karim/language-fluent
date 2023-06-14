@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 const MyClass = () => {
   const [myAddedCourse, refetch] = useMyAddedCourse();
   return (
-    <div>
-      <h2> My class After approved</h2>
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-3/4 mx-auto">
+        <h2 className="text2xl font-bold text-center my-12">
+          {" "}
+          My class 
+        </h2>
 
-      <div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}
             <thead>
@@ -23,7 +26,6 @@ const MyClass = () => {
                 <th>Seat</th>
                 <th>status</th>
                 <th>Action</th>
-
               </tr>
             </thead>
             <tbody>
@@ -49,7 +51,13 @@ const MyClass = () => {
                   <td>{course.price}</td>
                   <td>{course.available_seat}</td>
                   <td>{course.status}</td>
-                  <td><Link to={`/dashboard/updateclass/${course._id}`}><button className="btn btn-outline btn-xs btn-info">Edit</button></Link></td>
+                  <td>
+                    <Link to={`/dashboard/updateclass/${course._id}`}>
+                      <button className="btn btn-outline btn-xs btn-info">
+                        Edit
+                      </button>
+                    </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>

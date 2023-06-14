@@ -2,6 +2,7 @@ import React from "react";
 import useSelectCourse from "../../../../hooks/useSelectCourse";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 const SelectedCourse = () => {
   const [selectCourse, refetch] = useSelectCourse();
@@ -31,50 +32,55 @@ const SelectedCourse = () => {
   };
 
   return (
-    <div>
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Fee</th>
-              <th>Seat</th>
-              <th>Action</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {selectCourse.map((course, index) => (
-              <tr key={course._id}>
-                <th>
-                  <label>{index + 1}</label>
-                </th>
-
-                <td>{course.name}</td>
-                <td>{course.price}</td>
-                <td>{course.available_seat}</td>
-                <td>
-                  <Link to="/dashboard/payment">
-                    {" "}
-                    <button className="btn btn-info btn-outline btn-xs">
-                      pay
-                    </button>
-                  </Link>
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(course)}
-                    className="btn btn-error btn-outline btn-xs"
-                  >
-                    Delete
-                  </button>
-                </td>
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-3/4 mx-auto">
+        <h2 className="text2xl font-bold text-center my-12">
+          My Selected Course
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Fee</th>
+                <th>Seat</th>
+                <th>Action</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {selectCourse.map((course, index) => (
+                <tr key={course._id}>
+                  <th>
+                    <label>{index + 1}</label>
+                  </th>
+
+                  <td>{course.name}</td>
+                  <td>{course.price}</td>
+                  <td>{course.available_seat}</td>
+                  <td>
+                    <Link to="/dashboard/payment">
+                      {" "}
+                      <button className="btn btn-info btn-outline btn-xs">
+                        pay
+                      </button>
+                    </Link>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => handleDelete(course)}
+                      className="btn btn-error btn-outline btn-sm"
+                    >
+                     <FaRegTrashAlt></FaRegTrashAlt>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

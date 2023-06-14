@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const ManageClass = () => {
   const { user } = useAuth();
   const [reviewCourse, refetch] = useManageCourse();
-  
+
   const handleDelete = (course) => {
     Swal.fire({
       title: "Are you sure?",
@@ -33,67 +33,70 @@ const ManageClass = () => {
     });
   };
   return (
-    <div>
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Picture</th>
-              <th> Class Name</th>
-              <th> Instructor Name</th>
-              <th> Instructor Email</th>
-              <th>Fee</th>
-              <th>Seat</th>
-              <th>status</th>
-              <th>Action</th>
-              <th>feedback</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviewCourse.map((course, index) => (
-              <tr key={course._id}>
-                <th>
-                  <label>{index + 1}</label>
-                </th>
-
-                <td>
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img
-                        src={course.image}
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td>{course.name}</td>
-                <td>{course.instructor_name}</td>
-                <td>{course.email}</td>
-                <td>{course.price}</td>
-                <td>{course.available_seat}</td>
-                <td>{course.status}</td>
-                <td>
-                  <button className="btn btn-primary btn-outline btn-xs">
-                    Approve
-                  </button>
-                  <button
-                    onClick={() => handleDelete(course)}
-                    className="btn btn-error btn-outline btn-xs"
-                  >
-                    Denay
-                  </button>
-                </td>
-                <td>
-                  <button className="btn btn-info btn-outline btn-xs">
-                    FeedBack
-                  </button>
-                </td>
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-5/6 mx-auto">
+      <h2 className="text2xl font-bold text-center my-12"> Manage Class</h2>
+        <div className="overflow-x-auto">
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Picture</th>
+                <th> Class Name</th>
+                <th> Instructor Name</th>
+                <th> Instructor Email</th>
+                <th>Fee</th>
+                <th>Seat</th>
+                <th>status</th>
+                <th>Action</th>
+                <th>feedback</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {reviewCourse.map((course, index) => (
+                <tr key={course._id}>
+                  <th>
+                    <label>{index + 1}</label>
+                  </th>
+
+                  <td>
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          src={course.image}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>{course.name}</td>
+                  <td>{course.instructor_name}</td>
+                  <td>{course.email}</td>
+                  <td>{course.price}</td>
+                  <td>{course.available_seat}</td>
+                  <td>{course.status}</td>
+                  <td>
+                    <button className="btn btn-primary btn-outline btn-xs">
+                      Approve
+                    </button>
+                    <button
+                      onClick={() => handleDelete(course)}
+                      className="btn btn-error btn-outline btn-xs"
+                    >
+                      Denay
+                    </button>
+                  </td>
+                  <td>
+                    <button className="btn btn-info btn-outline btn-xs">
+                      FeedBack
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

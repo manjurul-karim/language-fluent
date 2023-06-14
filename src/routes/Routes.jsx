@@ -20,6 +20,7 @@ import AdminRoute from "./AdminRoute";
 import StudentRoute from "./StudentRoute";
 import ManageClass from "../pages/Dashboard/AdminDashboard/ManageClass/ManageClass";
 import UpdateMyClass from "../pages/Dashboard/InstructorDashboard/UpadeMyClass/UpdateMyClass";
+import EnrollCourse from "../pages/Dashboard/StudentDashboard/EnrollCourse/EnrollCourse";
 
 export const router = createBrowserRouter([
   {
@@ -110,6 +111,10 @@ export const router = createBrowserRouter([
         element: <UpdateMyClass></UpdateMyClass>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/updatecourse/${params.id}`),
+      },
+      {
+        path: "enrollclass",
+        element: <EnrollCourse></EnrollCourse>,
       },
     ],
   },

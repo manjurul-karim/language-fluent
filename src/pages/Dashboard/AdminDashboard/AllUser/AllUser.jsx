@@ -83,71 +83,73 @@ const AllUser = () => {
   };
 
   return (
-    <div>
-      <h2> All User page</h2>
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-3/4 mx-auto">
+        <h2 className="text2xl font-bold text-center my-12"> All User page</h2>
 
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Role</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={user._id}>
-                <th>
-                  <label>{index + 1}</label>
-                </th>
-
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>
-                  {user.role === "admin" ? (
-                    <p className="text-indigo-600 text-lg font-semibold">
-                      Admin
-                    </p>
-                  ) : (
-                    <button
-                      onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-primary btn-outline btn-xs "
-                    >
-                      make Admin
-                    </button>
-                  )}
-                </td>
-                <td>
-                  {user.role === "instructor" ? (
-                    <p className="text-cyan-500 text-lg font-semibold">
-                      Instructor
-                    </p>
-                  ) : (
-                    <button
-                      onClick={() => handleMakeInstructor(user)}
-                      className="btn btn-info btn-outline btn-xs"
-                    >
-                      make Instructor
-                    </button>
-                  )}
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(user)}
-                    className="btn btn-error btn-outline btn-xs"
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Role</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {users.map((user, index) => (
+                <tr key={user._id}>
+                  <th>
+                    <label>{index + 1}</label>
+                  </th>
+
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>
+                    {user.role === "admin" ? (
+                      <p className="text-indigo-600 text-lg font-semibold">
+                        Admin
+                      </p>
+                    ) : (
+                      <button
+                        onClick={() => handleMakeAdmin(user)}
+                        className="btn btn-primary btn-outline btn-xs "
+                      >
+                        make Admin
+                      </button>
+                    )}
+                  </td>
+                  <td>
+                    {user.role === "instructor" ? (
+                      <p className="text-cyan-500 text-lg font-semibold">
+                        Instructor
+                      </p>
+                    ) : (
+                      <button
+                        onClick={() => handleMakeInstructor(user)}
+                        className="btn btn-info btn-outline btn-xs"
+                      >
+                        make Instructor
+                      </button>
+                    )}
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => handleDelete(user)}
+                      className="btn btn-error btn-outline btn-xs"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

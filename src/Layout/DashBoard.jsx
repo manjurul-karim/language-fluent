@@ -75,7 +75,10 @@ const DashBoard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/myclass"> <BsClipboardCheck></BsClipboardCheck>My Class </NavLink>
+                <NavLink to="/dashboard/myclass">
+                  {" "}
+                  <BsClipboardCheck></BsClipboardCheck>My Class{" "}
+                </NavLink>
               </li>
             </ul>
           )}
@@ -88,7 +91,7 @@ const DashBoard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/selectedcourse">
+                <NavLink to="/dashboard/enrollclass">
                   <TbTargetArrow></TbTargetArrow>Enroll Course
                 </NavLink>
               </li>
