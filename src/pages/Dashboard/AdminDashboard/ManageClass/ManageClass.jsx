@@ -19,9 +19,12 @@ const ManageClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/reviewcourse/${course._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://a12-languagefluent-server.vercel.app/reviewcourse/${course._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -35,7 +38,7 @@ const ManageClass = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-5/6 mx-auto">
-      <h2 className="text2xl font-bold text-center my-12"> Manage Class</h2>
+        <h2 className="text2xl font-bold text-center my-12"> Manage Class</h2>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

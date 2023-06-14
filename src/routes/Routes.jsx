@@ -110,7 +110,9 @@ export const router = createBrowserRouter([
         path: "updateclass/:id",
         element: <UpdateMyClass></UpdateMyClass>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatecourse/${params.id}`),
+          fetch(
+            `https://a12-languagefluent-server.vercel.app/updatecourse/${params.id}`
+          ),
       },
       {
         path: "enrollclass",

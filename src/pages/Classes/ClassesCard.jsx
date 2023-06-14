@@ -23,7 +23,7 @@ const ClassesCard = ({ course }) => {
         email: user.email,
         userName: user.displayName,
       };
-      fetch("http://localhost:5000/selectcourse", {
+      fetch("https://a12-languagefluent-server.vercel.app/selectcourse", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -10,16 +10,18 @@ const CheckoutForm = ({ price }) => {
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
- 
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ price }), // Wrap the price in an object and stringify it
-    })
+    fetch(
+      "https://a12-languagefluent-server.vercel.app/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price }), // Wrap the price in an object and stringify it
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data.clientSecret);

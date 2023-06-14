@@ -2,7 +2,7 @@ import React from "react";
 import useSelectCourse from "../../../../hooks/useSelectCourse";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import { FaRegTrashAlt } from 'react-icons/fa';
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const SelectedCourse = () => {
   const [selectCourse, refetch] = useSelectCourse();
@@ -17,9 +17,12 @@ const SelectedCourse = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/selectcourse/${course._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://a12-languagefluent-server.vercel.app/selectcourse/${course._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -73,7 +76,7 @@ const SelectedCourse = () => {
                       onClick={() => handleDelete(course)}
                       className="btn btn-error btn-outline btn-sm"
                     >
-                     <FaRegTrashAlt></FaRegTrashAlt>
+                      <FaRegTrashAlt></FaRegTrashAlt>
                     </button>
                   </td>
                 </tr>

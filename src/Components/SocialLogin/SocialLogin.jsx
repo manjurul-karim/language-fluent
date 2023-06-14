@@ -19,7 +19,7 @@ const SocialLogin = () => {
           email: loggedUser.email,
           role: "student",
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://a12-languagefluent-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -30,7 +30,6 @@ const SocialLogin = () => {
           .then((data) => {
             if (data.insertedId) {
               navigate(from, { replace: true });
-              
             }
           });
       })
