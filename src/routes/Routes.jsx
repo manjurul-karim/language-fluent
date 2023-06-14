@@ -13,6 +13,13 @@ import SelectedCourse from "../pages/Dashboard/StudentDashboard/SelectedCourse/S
 import Payment from "../pages/Dashboard/StudentDashboard/Payment/Payment";
 
 import AllUser from "../pages/Dashboard/AdminDashboard/AllUser/AllUser";
+import AddClass from "../pages/Dashboard/InstructorDashboard/AddClass/AddClass";
+import MyClass from "../pages/Dashboard/InstructorDashboard/MyClass/MyClass";
+import InstructorRoute from "./InstructorRoute";
+import AdminRoute from "./AdminRoute";
+import StudentRoute from "./StudentRoute";
+import ManageClass from "../pages/Dashboard/AdminDashboard/ManageClass/ManageClass";
+import UpdateMyClass from "../pages/Dashboard/InstructorDashboard/UpadeMyClass/UpdateMyClass";
 
 export const router = createBrowserRouter([
   {
@@ -56,15 +63,53 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "selectedcourse",
-        element: <SelectedCourse></SelectedCourse>,
+        element: (
+          <StudentRoute>
+            <SelectedCourse></SelectedCourse>
+          </StudentRoute>
+        ),
       },
       {
         path: "payment",
-        element: <Payment></Payment>,
+        element: (
+          <StudentRoute>
+            <Payment></Payment>
+          </StudentRoute>
+        ),
       },
       {
         path: "alluser",
-        element: <AllUser></AllUser>,
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "addclass",
+        element: (
+          <InstructorRoute>
+            <AddClass></AddClass>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "myclass",
+        element: (
+          <InstructorRoute>
+            <MyClass></MyClass>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "manageclasses",
+        element: <ManageClass></ManageClass>,
+      },
+      {
+        path: "updateclass/:id",
+        element: <UpdateMyClass></UpdateMyClass>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/updatecourse/${params.id}`),
       },
     ],
   },

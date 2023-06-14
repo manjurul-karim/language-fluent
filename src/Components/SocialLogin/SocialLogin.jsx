@@ -6,7 +6,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
   const { signInWithGoogle } = useContext(AuthContext);
 
@@ -18,6 +17,7 @@ const SocialLogin = () => {
         const savedUser = {
           name: loggedUser.displayName,
           email: loggedUser.email,
+          role: "student",
         };
         fetch("http://localhost:5000/users", {
           method: "POST",
@@ -30,6 +30,7 @@ const SocialLogin = () => {
           .then((data) => {
             if (data.insertedId) {
               navigate(from, { replace: true });
+              
             }
           });
       })

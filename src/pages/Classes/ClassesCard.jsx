@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
+import useAuth from "../../hooks/useAuth";
 
 const ClassesCard = ({ course }) => {
   const { image, instructor_name, available_seat, price, name, _id } = course;
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -56,6 +59,7 @@ const ClassesCard = ({ course }) => {
       });
     }
   };
+
   return (
     <div className="card border-2 w-96 h-64 bg-base-100 image-full  overflow-hidden relative transition duration-200 transform hover:-translate-y-2 ">
       <figure>
@@ -67,10 +71,7 @@ const ClassesCard = ({ course }) => {
         <p>Available Seat:{available_seat}</p>
         <p>Course Fee:{price}</p>
         <div className="card-actions justify-end">
-          <button
-            onClick={() => handleAddCourse(course)}
-            className="btn btn-primary"
-          >
+          <button onClick={handleAddCourse} className="btn btn-primary">
             Add Course
           </button>
         </div>

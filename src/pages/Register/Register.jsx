@@ -1,28 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Lottie from "lottie-react";
-import registeranim from "../../assets/register/112454-form-registration.json";
 import RegisterForm from "./RegisterForm";
-import registerbg from "../../assets/register/registerbg.jpg";
-import gh from "../../assets/banner/banner.png";
 import "./Register.css";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
-  //   const {
-  //     register,
-  //     reset,
-  //     handleSubmit,
-  //     formState: { errors },
-  //   } = useForm();
-
-  //   const onSubmit = (data) => {
-  //     console.log(data);
-  //   };
-
   return (
     <>
       <Helmet>

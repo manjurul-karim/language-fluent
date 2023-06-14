@@ -3,18 +3,19 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useAuth from "../hooks/useAuth";
-
+import useStudent from "../hooks/useStudent";
 
 const DashBoard = () => {
   const { user } = useAuth();
 
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
+  const [isStudent] = useStudent();
 
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col  w-full ">
         <Outlet></Outlet>
 
         <label
@@ -51,23 +52,26 @@ const DashBoard = () => {
               <li>
                 <Link to="/dashboard/alluser">All User</Link>
               </li>
+              <li>
+                <Link to="/dashboard/manageclasses">Manage Classes</Link>
+              </li>
             </ul>
           )}
           {isInstructor && (
             <ul>
               <li>
+                <NavLink to="/dashboard/addclass">Add a Class</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myclass">My Class </NavLink>
+              </li>
+              <li>
                 <Link to="/">Home</Link>
-              </li>
-              <li>
-                <NavLink to="/dashboard/payment">Add a Class</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/payment">My Class Class</NavLink>
               </li>
             </ul>
           )}
 
-          {!isAdmin && !isInstructor && (
+          {isStudent && (
             <ul>
               <li>
                 <Link to="/">Home</Link>

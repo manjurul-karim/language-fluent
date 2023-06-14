@@ -3,10 +3,11 @@ import useDarkMode from "../../../hooks/useDarkMode";
 import logo from "../../../assets/logo/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import useAuth from "../../../hooks/useAuth";
 
 const NavBar = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth()
 
   const handleLogeOut = () => {
     logOut()

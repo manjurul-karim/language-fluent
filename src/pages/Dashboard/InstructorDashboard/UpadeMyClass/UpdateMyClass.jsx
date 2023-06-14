@@ -1,13 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../hooks/useAuth";
-import Swal from "sweetalert2";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+// import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { useLoaderData } from "react-router-dom";
 
-const AddClass = () => {
+const UpdateMyClass = () => {
   const { user } = useAuth();
-  const [axiosSecure] = useAxiosSecure();
-
   const {
     register,
     handleSubmit,
@@ -15,29 +13,15 @@ const AddClass = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { name, price, instructorName, image, seat, email, pending } = data;
-    const addClass = {
+    const { name, price, instructorName, image, seat, email } = data;
+    const updateClass = {
       name,
       price,
       instructor_name: instructorName,
       image,
       available_seat: seat,
       email,
-      status: "pending",
     };
-    axiosSecure.post("/reviewcourse", addClass).then((data) => {
-      console.log("afeter posting class", data.data);
-      if (data.data.insertedId) {
-       reset()
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Added Course Successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
   };
 
   return (
@@ -45,7 +29,7 @@ const AddClass = () => {
       <div className="flex flex-col h-screen items-center justify-center">
         <h2 className="text-green-600 text-2xl font-bold text-center mb-12">
           {" "}
-          Add New Class
+          Update Class
         </h2>
         <div className="w-3/4 mx-auto shadow-2xl border-2 rounded p-16">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -147,4 +131,4 @@ const AddClass = () => {
   );
 };
 
-export default AddClass;
+export default UpdateMyClass;

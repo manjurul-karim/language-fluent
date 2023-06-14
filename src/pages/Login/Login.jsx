@@ -15,7 +15,6 @@ const eyeslash = <FaEyeSlash></FaEyeSlash>;
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
   const {
     register,
@@ -42,7 +41,7 @@ const Login = () => {
           },
         });
         navigate(from, { replace: true });
-        navigate("/");
+        
       })
       .catch((error) => {
         setError(error.message);

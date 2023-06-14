@@ -1,6 +1,8 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
+import SelectedCourse from "../SelectedCourse/SelectedCourse";
+import useSelectCourse from "../../../../hooks/useSelectCourse";
 
 const CheckoutForm = ({ price }) => {
   const { user } = useContext(AuthContext);
@@ -8,9 +10,9 @@ const CheckoutForm = ({ price }) => {
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
+ 
 
   useEffect(() => {
-    console.log(price);
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
