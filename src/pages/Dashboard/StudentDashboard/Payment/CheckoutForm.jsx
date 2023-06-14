@@ -19,7 +19,7 @@ const CheckoutForm = ({ price }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ price }), // Wrap the price in an object and stringify it
+        body: JSON.stringify(), 
       }
     )
       .then((res) => res.json())
@@ -27,7 +27,7 @@ const CheckoutForm = ({ price }) => {
         console.log(data.clientSecret);
         setClientSecret(data.clientSecret);
       });
-  }, []); // Add 'price' as a dependency to trigger the effect on price change
+  }, []); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();

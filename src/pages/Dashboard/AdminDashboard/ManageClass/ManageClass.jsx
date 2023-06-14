@@ -37,7 +37,7 @@ const ManageClass = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-5/6 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h2 className="text2xl font-bold text-center my-12"> Manage Class</h2>
         <div className="overflow-x-auto">
           <table className="table">
@@ -47,7 +47,7 @@ const ManageClass = () => {
                 <th>#</th>
                 <th>Picture</th>
                 <th> Class Name</th>
-                <th> Instructor Name</th>
+                <th> Name</th>
                 <th> Instructor Email</th>
                 <th>Fee</th>
                 <th>Seat</th>
@@ -82,10 +82,11 @@ const ManageClass = () => {
                   <td>
                     <button className="btn btn-primary btn-outline btn-xs">
                       Approve
-                    </button>
+                    </button>{" "}
+                    <br />
                     <button
                       onClick={() => handleDelete(course)}
-                      className="btn btn-error btn-outline btn-xs"
+                      className="btn btn-error btn-outline btn-xs my-2"
                     >
                       Denay
                     </button>
