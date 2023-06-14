@@ -5,6 +5,8 @@ import Slider from "../Slider/Slider";
 import useDarkMode from "../../../hooks/useDarkMode";
 import ExtraSection from "../ExtraSection/ExtraSection";
 import ExtraSection2 from "../ExtraSection2/ExtraSection2";
+import PopularClass from "../PopularClass/PopularClass";
+import PopularInstructore from "../PopularInstructor/PopularInstructore";
 
 const Home = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
@@ -15,6 +17,8 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <Slider></Slider>
+      <PopularClass></PopularClass>
+      <PopularInstructore></PopularInstructore>
       <ExtraSection></ExtraSection>
       <ExtraSection2></ExtraSection2>
     </div>

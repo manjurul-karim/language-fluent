@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/nDy2CF8/ins10.jpg",
     "name": "John Doe",
     "email": "john.doe@example.com",
     "totalClasses": 10,
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/Ct0fJRL/ins9.jpg",
     "name": "Jane Smith",
     "email": "jane.smith@example.com",
     "totalClasses": 8,
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/B2t7kg2/ins8.jpg",
     "name": "David Johnson",
     "email": "david.johnson@example.com",
     "totalClasses": 12,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/QMtkWgx/ins8.jpg",
     "name": "Emily Wilson",
     "email": "emily.wilson@example.com",
     "totalClasses": 5,
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/QMtkWgx/ins7.jpg",
     "name": "Michael Brown",
     "email": "michael.brown@example.com",
     "totalClasses": 15,
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/g7pbVdN/ins6.jpg",
     "name": "Sarah Thompson",
     "email": "sarah.thompson@example.com",
     "totalClasses": 7,
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/P9ypqDg/ins5.webp",
     "name": "Daniel Lee",
     "email": "daniel.lee@example.com",
     "totalClasses": 9,
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/G9p5Ztx/ins4.jpg",
     "name": "Olivia Garcia",
     "email": "olivia.garcia@example.com",
     "totalClasses": 11,
@@ -73,26 +73,10 @@
   },
   {
     "id": 10,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
+    "image": "https://i.ibb.co/xh2YT2x/ins1.webp",
     "name": "Sophia Anderson",
     "email": "sophia.anderson@example.com",
     "totalClasses": 14,
     "classNames": ["Spanish Conversation", "Italian 101"]
-  },
-  {
-    "id": 11,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
-    "name": "James Taylor",
-    "email": "james.taylor@example.com",
-    "totalClasses": 3,
-    "classNames": ["French Conversation"]
-  },
-  {
-    "id": 12,
-    "image": "https://i.ibb.co/3M8Sq9T/germany.webp",
-    "name": "Ava Rodriguez",
-    "email": "ava.rodriguez@example.com",
-    "totalClasses": 10,
-    "classNames": ["English Grammar"]
   }
 ]

@@ -4,6 +4,10 @@ import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useAuth from "../hooks/useAuth";
 import useStudent from "../hooks/useStudent";
+import { TbHome, TbTarget, TbTargetArrow } from "react-icons/tb";
+import { FaBook, FaUsers } from "react-icons/fa";
+import { GrUpdate } from "react-icons/gr";
+import { BsClipboardCheck } from "react-icons/bs";
 
 const DashBoard = () => {
   const { user } = useAuth();
@@ -43,30 +47,35 @@ const DashBoard = () => {
               </span>
             </div>
           </div>
-
+          <li>
+            <Link to="/">
+              {" "}
+              <TbHome></TbHome> Home
+            </Link>
+          </li>
           {isAdmin && (
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/dashboard/alluser">
+                  <FaUsers></FaUsers> All User
+                </Link>
               </li>
               <li>
-                <Link to="/dashboard/alluser">All User</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/manageclasses">Manage Classes</Link>
+                <Link to="/dashboard/manageclasses">
+                  <GrUpdate></GrUpdate> Manage Classes
+                </Link>
               </li>
             </ul>
           )}
           {isInstructor && (
             <ul>
               <li>
-                <NavLink to="/dashboard/addclass">Add a Class</NavLink>
+                <NavLink to="/dashboard/addclass">
+                  <FaBook></FaBook> Add a Class
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/myclass">My Class </NavLink>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/dashboard/myclass"> <BsClipboardCheck></BsClipboardCheck>My Class </NavLink>
               </li>
             </ul>
           )}
@@ -74,16 +83,13 @@ const DashBoard = () => {
           {isStudent && (
             <ul>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
                 <NavLink to="/dashboard/selectedcourse">
-                  My Select Course
+                  <TbTarget></TbTarget>Select Course
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/selectedcourse">
-                  My Enroll Course
+                  <TbTargetArrow></TbTargetArrow>Enroll Course
                 </NavLink>
               </li>
             </ul>
